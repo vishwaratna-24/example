@@ -10,26 +10,16 @@ pipeline {
         
         stage('Build') {
             steps {
-                echo 'Building'
+                powershell 'docker build -f example/Dockerfile -t example .'
             }
         }
        
         stage('Deploy') {
             steps {
-                echo 'Deploying'
+                powershell 'docker run -p 8081:80 example'
             }
         }
         
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-       
-        stage('Release') {
-            steps {
-                echo 'Releasing'
-            }
-        }
+        
     }
 }
