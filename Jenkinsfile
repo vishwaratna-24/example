@@ -10,9 +10,9 @@ pipeline {
         
         stage('Build docker image') {
             steps {
-                 script{
-                  sh 'docker build -f example/Dockerfile -t iamakki/example .'
-                 }    
+                 
+                  powershell 'docker build -f example/Dockerfile -t iamakki/example .'
+                     
             }
         }
        
