@@ -10,13 +10,13 @@ pipeline {
         
         stage('Build docker image') {
             steps {
-                powershell 'docker build -f example/Dockerfile -t example .'
+                powershell 'docker build -f example/Dockerfile -t binarythis/example .'
             }
         }
        
         stage('Deploy') {
             steps {
-                powershell 'docker run -p 8081:80 example'
+                powershell 'docker run -p 8081:80 binarythis/example'
             }
         }
         
