@@ -11,7 +11,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                  
-                  sh 'docker build -f example/Dockerfile -t iamakki/example .'
+                  powershell 'docker build -f example/Dockerfile -t iamakki/example .'
                      
             }
         }
