@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/akanksha49182/example.git'
+                echo 'build'
             }
         }
         
