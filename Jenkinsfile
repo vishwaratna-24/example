@@ -15,9 +15,11 @@ pipeline {
                      
             }
         }
-        stage('Push image to Docker hub'){
-             steps {powershell 'docker login -u iamakki -p cpucxb815946!'}
-        }
+        stage('Docker'){
+            steps{
+                echo "Hello"
+            }
+        }
         stage('Deploy') {
             steps {
                 powershell 'docker run -p 8081:80 iamakki/example'
