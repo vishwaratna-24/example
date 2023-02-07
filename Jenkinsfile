@@ -17,7 +17,8 @@ pipeline {
         }
         stage('Docker'){
             steps{
-                echo "Hello"
+                powershell 'docker login -u iamakki -p cpucxb815946!'
+                powershell 'docker push iamakki/example'
             }
         }
         stage('Deploy') {
